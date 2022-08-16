@@ -1,4 +1,5 @@
 <configuration>
+    <!-- 表示提交到hadoop中的任务采用yarn来运行，要是已经有该配置则无需重复配置 -->
     <property>
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
@@ -7,6 +8,7 @@
         <name>mapreduce.application.classpath</name>
         <value>$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*</value>
     </property>
+    <!--日志监控服务的地址，一般填写为nodenode机器地址 -->
     <property>
     	<name>mapreduce.jobhistory.address</name>
     	<value>node1:10020</value>
