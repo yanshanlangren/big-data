@@ -1,0 +1,31 @@
+<configuration>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://mycluster</value>
+  </property>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/home/hadoop/data</value>
+  </property>
+  <property>
+    <name>hadoop.http.staticuser.user</name>
+    <value>hadoop</value>
+  </property>
+  <property>
+    <name>ha.zookeeper.quorum</name>
+    <value>node1:2181,node2:2181,node3:2181</value>
+  </property>
+
+  <!-- 伪装/代理成超级用户，后续hiveserver2会用到，这个会有安全问题，不用hive2可以不加 -->
+
+  <!-- 所有ip登录的所有用户都会被伪装成为hadoop的hadoop用户 -->
+  <property>
+    <name>hadoop.proxyuser.hadoop.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hadoop.groups</name>
+    <value>*</value>
+  </property>
+
+</configuration>
