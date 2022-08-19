@@ -1,0 +1,44 @@
+# master地址
+jobmanager.rpc.address: node1
+ 
+# master端口
+jobmanager.rpc.port: 6123
+ 
+# master地址绑定设置（master节点参数）
+jobmanager.bind-host: 0.0.0.0
+ 
+# worker地址绑定设置
+taskmanager.bind-host: 0.0.0.0
+ 
+# worker地址（注意：三个worker节点的host不一样）
+taskmanager.host: node1
+ 
+# worker槽位数设置
+taskmanager.numberOfTaskSlots: 2
+ 
+# 默认并行度
+parallelism.default: 2
+ 
+# WEB UI 端口（master节点参数）
+rest.port: 8081
+ 
+# WEB UI 管理地址
+rest.address: node1
+ 
+# WEB UI 地址绑定设置，想让外部访问，可以设置具体的IP，或者直接设置成“0.0.0.0”（master节点参数）
+rest.bind-address: 0.0.0.0
+ 
+# Job文件目录（master节点参数）
+web.upload.dir: /home/hadoop/flink/usrlib
+ 
+# IO临时目录，默认：/tmp
+io.tmp.dirs: /tmp
+ 
+# 集群节点进程ID存放目录，默认：/tmp
+env.pid.dir: /home/hadoop/flink/pids
+
+# jobmanager heap size(master节点参数)
+jobmanager.memory.process.size: 1600m
+
+# taskmanager heap size
+taskmanager.memory.process.size: 1728m
